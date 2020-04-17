@@ -1,0 +1,33 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.min.css' %}">
+    <title>{% block head_title %}KV TUTS{% endblock head_title %}</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2 style="padding-left: 30%;padding-top:4%;">Are you a teacher or student</h2>
+        <h6 style="padding-left: 40%;">already sign up click <a href="/login/">here<a></h6>
+        <a href="/registerStudent/" style="margin-left: 35%;" class="btn btn-primary">Student</a>
+        <a href="/registerTeacher/" style="margin-left: 10%;" class="btn btn-primary">Teacher</a>
+        <br><br><br>
+        <img style="margin-left: 42%;" src="{% static 'images/teacher.jpg' %}" alt="">
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+</body>
+
+</html>

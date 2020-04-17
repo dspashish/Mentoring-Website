@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+    {% block head_title %}donor details | {{ block.super }}{% endblock head_title %}
+
+
+{% block content %}
+
+
+<img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}" alt="">
+
+<h1>username: {{object.author}}</h1><br>
+<h2>Name of {{object.author.cat}}: {{object.author.first_name}} {{object.author.last_name}}</h2>
+
+<br>
+<br>
+<p>Title: {{ object.title }}</p>
+<br>
+<br>
+<p>Content:</p>
+<p style="overflow-y: auto;">{{object.content}}</p>
+
+<br><br><br><br><br>
+{% endblock content %}

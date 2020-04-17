@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+    {% block head_title %}Profile | {{ block.super }}{% endblock head_title %}
+
+
+{% block content %}
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ obj.profile.image.url }}">
+        <div class="media-body">
+          <h2 class="account-heading">{{ obj.first_name }}</h2>
+          <p class="text-secondary">{{ obj.email }}</p>
+                    <p>username: {{obj.username}}</p>
+        <p>First Name: {{obj.first_name}}</p>
+        <p>Last Name: {{obj.last_name}}</p>
+        <p>Joined: {{obj.date_joined}}</p>
+        <p>phone: <a href="tel:{{obj.phone_number}}">{{obj.phone_number}}</a></p>
+        <p>email: <a href="mailto:{{obj.email}}">{{obj.email}}</a></p>
+        <p>Category: {{obj.cat}}</p>
+        </div>
+      </div>
+        <br><br>
+
+
+
+    </div>
+{% endblock content %}

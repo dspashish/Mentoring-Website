@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+{% if user.is_superuser %}
+<a href="/admin/mentor/information/add/" class="btn btn-primary">Do a Post</a>
+{% endif %}
+{% for o in obj %}
+<div class="card">
+  <h5 class="card-header">{{o.title}}</h5>
+  <div class="card-body">
+
+    <h5 class="card-title">Author: {{o.first_name}} {{o.last_name}}</h5>
+    <p class="card-text">{{ o.content|truncatechars:80 }}.</p><br>
+  
+    <a href="{{ o.pk }}" class="btn btn-success">See Full</a>
+
+
+  </div>
+</div>
+
+<p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p>
+{% endfor %}
+
+{% endblock content %}

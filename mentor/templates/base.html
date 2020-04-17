@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block head_title %}KV2 | Portal{% endblock head_title %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    .bs-example {
+        margin: 20px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="bs-example">
+        {% if user.cat == "teacher" %}
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a href="#" class="navbar-brand">
+                <img src="/examples/images/logo.svg" height="28" alt="KV2 Learn">
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="/home/" class="nav-item nav-link active">Home</a>
+                    <a href="/students/" class="nav-item nav-link active">Students</a>
+                    <a href="/information/" class="nav-item nav-link active">Information</a>
+                    <a href="/discuss/" class="nav-item nav-link active" tabindex="-1">Discussion</a>
+                    <a href="/myhomework/" class="nav-item nav-link active" tabindex="-1">My Home Work</a>
+                </div>
+                <div class="navbar-nav ml-auto">
+                    <a href="/profile/" class="nav-item nav-link">{{user.username}}</a>
+                    <a href="/logout/" class="nav-item nav-link">Logout</a>
+                </div>
+            </div>
+        </nav>
+        {% else %}
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a href="#" class="navbar-brand">
+                <img src="/examples/images/logo.svg" height="28" alt="KV2 Learn ">
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="/home/" class="nav-item nav-link active">Home</a>
+                    <a href="/teachers/" class="nav-item nav-link active">Teachers</a>
+                    <a href="/information/" class="nav-item nav-link active">Information</a>
+                    <a href="/discuss/" class="nav-item nav-link active" tabindex="-1">Discussion</a>
+                </div>
+                <div class="navbar-nav ml-auto">
+                    <a href="/profile/" class="nav-item nav-link">{{user.username}}</a>
+                    <a href="/logout/" class="nav-item nav-link">Logout</a>
+                </div>
+            </div>
+        </nav>
+        {% endif %}
+        <div class="container">
+        {% block content %}
+        {% endblock content %}
+            </div>
+    </div>
+</body>
+
+</html>
